@@ -24,6 +24,11 @@ config/icon="res://icon.png"
 window/size/width=1366
 window/size/height=768
 
+[locale]
+
+translations=PoolStringArray( "res://text.csv" )
+locale_filter=[ 0, [  ] ]
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

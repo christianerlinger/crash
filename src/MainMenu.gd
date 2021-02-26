@@ -6,6 +6,9 @@ extends VBoxContainer
 # var b = "text"
 
 
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("NewGame").connect("pressed", self, "_on_new_game_pressed")
@@ -17,14 +20,17 @@ func _ready():
 
 func _on_new_game_pressed():
 	print("new game")
+	get_tree().change_scene("res://Game.tscn")
+	
 	
 func _on_host_game_pressed():
-	print("new game")
+	print("host game")
 	
 func _on_join_game_pressed():
 	print("join game")
 	
 func on_settings_pressed():
+	get_tree().change_scene("res://Settings.tscn")
 	print("settings")
 
 func _on_exit_pressed():
