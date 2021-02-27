@@ -31,7 +31,7 @@ jobs:
       - name: Windows Build
         run: godot -v --export "Windows Desktop" ./build/windows/$EXPORT_NAME.exe
       - name: Windows Release
-      dry-run: true
+        dry-run: true
         uses: ridedott/release-me-action@master
         release-assets: |
           ./build/windows
