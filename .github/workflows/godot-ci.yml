@@ -31,10 +31,10 @@ jobs:
       - name: Windows Build
         run: godot -v --export "Windows Desktop" ./build/windows/$EXPORT_NAME.exe
       - name: Windows Release
-        dry-run: true
         uses: ridedott/release-me-action@master
-        release-assets: |
-          ./build/windows
+        with:
+          release-assets: ./build/windows/$EXPORT_NAME.exe
+          dry-run: true
 
   export-linux:
     name: Linux Export
@@ -50,8 +50,8 @@ jobs:
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Linux Build
         run: godot -v --export "Linux/X11" ./build/linux/$EXPORT_NAME.x86_64
-      - name: Linux Release
+      - name: Linux Release Release
         uses: ridedott/release-me-action@master
-        dry-run: true
-        release-assets: |
-          ./build/linux
+        with:
+          release-assets: ./build/linux/$EXPORT_NAME.x86_64
+          dry-run: true
