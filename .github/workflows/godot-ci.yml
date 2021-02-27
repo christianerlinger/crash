@@ -30,10 +30,6 @@ jobs:
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Windows Build
         run: godot -v --export "Windows Desktop" ./build/windows/$EXPORT_NAME.exe
-      - name: Windows zip
-        uses: montudor/action-zip@v0.1.1
-        with:
-          args: zip -qq -r $EXPORT_NAME-windows.zip ./build/windows
       - name: Windows upload artifact
         uses: actions/upload-artifact@v2
         with:
@@ -54,10 +50,6 @@ jobs:
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Linux Build
         run: godot -v --export "Linux/X11" ./build/linux/$EXPORT_NAME.x86_64
-      - name: Linux zip
-        uses: montudor/action-zip@v0.1.1
-        with:
-          args: zip -qq -r $EXPORT_NAME-linux.zip ./build/linux
       - name: Linux upload artifact
         uses: actions/upload-artifact@v2
         with:
