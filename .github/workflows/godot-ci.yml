@@ -1,8 +1,8 @@
-name: "godot-ci export"
+name: "build crash release"
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-#  push:
-#    branches: [ main ]
+  push:
+    branches: [ main ]
 #  pull_request:
 #    branches: [ main ]
 
@@ -37,7 +37,7 @@ jobs:
       - name: Windows upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: $EXPORT_NAME-windows
+          name: windows-release
           path: $EXPORT_NAME-windows.zip
 
   export-linux:
@@ -61,5 +61,5 @@ jobs:
       - name: Linux upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: $EXPORT_NAME-linux
+          name: linux-release
           path: $EXPORT_NAME-linux.zip
