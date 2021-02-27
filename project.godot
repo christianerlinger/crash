@@ -24,6 +24,10 @@ config/icon="res://icon.png"
 window/size/width=1366
 window/size/height=768
 
+[editor]
+
+convert_text_resources_to_binary_on_export=true
+
 [locale]
 
 translations=PoolStringArray( "res://text.csv", "res://text.de.translation", "res://text.en.translation" )
