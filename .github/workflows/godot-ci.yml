@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: windows-release
-          path: $EXPORT_NAME-windows.zip
+          path: ./build/windows
 
   export-linux:
     name: Linux Export
@@ -54,4 +54,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: linux-release
-          path: $EXPORT_NAME-linux.zip
+          path: ./build/linux
