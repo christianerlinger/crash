@@ -16,8 +16,8 @@ env:
   EXPORT_NAME: crash
 
 jobs:
-  export-windows:
-    name: Windows Export
+  build-windows:
+    name: Windows Build
     runs-on: ubuntu-latest
     container:
       image: docker://barichello/godot-ci:3.2.3
@@ -36,8 +36,8 @@ jobs:
           name: windows-release
           path: ./build/windows
 
-  export-linux:
-    name: Linux Export
+  build-linux:
+    name: Linux Build
     runs-on: ubuntu-latest
     container:
       image: docker://barichello/godot-ci:3.2.3
