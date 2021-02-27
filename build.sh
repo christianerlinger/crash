@@ -1,4 +1,5 @@
 #!/bin/bash
+# how about https://github.com/aBARICHELLO/godot-ci
 GODOT_BINARY=~/Godot_v3.2.3/Godot_v3.2.3-stable_x11.64
 PROJECT_NAME=crash
 BASEDIR=$(pwd)
