@@ -30,11 +30,10 @@ jobs:
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Windows Build
         run: godot -v --export "Windows Desktop" ./build/windows/$EXPORT_NAME.exe
-      - name: Windows Release
-        uses: ridedott/release-me-action@master
+      - name: zip
+        uses: montudor/action-zip@v0.1.1
         with:
-          release-assets: ./build/windows/$EXPORT_NAME.exe
-          dry-run: true
+          args: zip -qq -r $EXPORT_NAME-windows.zip ./build/windows
 
   export-linux:
     name: Linux Export
@@ -50,8 +49,7 @@ jobs:
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Linux Build
         run: godot -v --export "Linux/X11" ./build/linux/$EXPORT_NAME.x86_64
-      - name: Linux Release Release
-        uses: ridedott/release-me-action@master
+      - name: zip
+        uses: montudor/action-zip@v0.1.1
         with:
-          release-assets: ./build/linux/$EXPORT_NAME.x86_64
-          dry-run: true
+          args: zip -qq -r $EXPORT_NAME-linux.zip ./build/linux
