@@ -1,3 +1,19 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Car.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 683.381, 10 )
 
 [node name="GameArea" type="Node2D"]
+
+[node name="Car" parent="." instance=ExtResource( 1 )]
+position = Vector2( 199.323, 192.261 )
+
+[node name="TopWall" type="CollisionShape2D" parent="."]
+position = Vector2( 673.818, -2.11893 )
+shape = SubResource( 1 )
+
+[node name="BottomWall" type="CollisionShape2D" parent="."]
+position = Vector2( 673.818, 759.881 )
+shape = SubResource( 1 )
