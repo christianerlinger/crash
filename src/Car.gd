@@ -3,11 +3,6 @@ extends KinematicBody2D
 
 var speed = 100
 
-const DIRECTION_UP = Vector2(0,-1)
-const DIRECTION_DOWN = Vector2(0, 1)
-const DIRECTION_LEFT = Vector2(-1, 0)
-const DIRECTION_RIGHT = Vector2(1, 0)
-
 const DRIVE_UP = KEY_W
 const DRIVE_DOWN = KEY_S
 const DRIVE_LEFT = KEY_A
@@ -24,22 +19,22 @@ func _ready():
 func _input(event):
 	
 	if event is InputEventKey and event.pressed:
-		if event.scancode == DRIVE_UP && driving_direction != DIRECTION_DOWN:
+		if event.scancode == DRIVE_UP && driving_direction != Vector2.DOWN:
 			#if driving_direction == DIRECTION_LEFT:
 				
-			driving_direction = DIRECTION_UP
+			driving_direction = Vector2.UP
 			driving_direction = driving_direction.normalized()
 			
-		if event.scancode == DRIVE_DOWN && driving_direction != DIRECTION_UP:
-			driving_direction = DIRECTION_DOWN
+		if event.scancode == DRIVE_DOWN && driving_direction != Vector2.UP:
+			driving_direction = Vector2.DOWN
 			driving_direction = driving_direction.normalized()
 
-		if event.scancode == DRIVE_LEFT && driving_direction != DIRECTION_RIGHT:
-			driving_direction = DIRECTION_LEFT
+		if event.scancode == DRIVE_LEFT && driving_direction != Vector2.RIGHT:
+			driving_direction = Vector2.LEFT
 			driving_direction = driving_direction.normalized()
 			
-		if event.scancode == DRIVE_RIGHT && driving_direction != DIRECTION_LEFT:
-			driving_direction = DIRECTION_RIGHT
+		if event.scancode == DRIVE_RIGHT && driving_direction != Vector2.LEFT:
+			driving_direction = Vector2.RIGHT
 			driving_direction = driving_direction.normalized()
 
 
